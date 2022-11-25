@@ -33,8 +33,8 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace towr {
 
-TimeDiscretizationConstraint::TimeDiscretizationConstraint(double T, double dt,
-                                                           std::string name)
+TimeDiscretizationConstraint::TimeDiscretizationConstraint(
+    double T, double dt, const std::string& name)
     : ConstraintSet(kSpecifyLater, name)
 {
   double t = 0.0;
@@ -49,7 +49,7 @@ TimeDiscretizationConstraint::TimeDiscretizationConstraint(double T, double dt,
 }
 
 TimeDiscretizationConstraint::TimeDiscretizationConstraint(
-    const VecTimes& times, std::string name)
+    const VecTimes& times, const std::string& name)
     : ConstraintSet(kSpecifyLater, name)  // just placeholder
 {
   dts_ = times;
@@ -84,7 +84,7 @@ TimeDiscretizationConstraint::VecBound TimeDiscretizationConstraint::GetBounds()
   return bounds;
 }
 
-void TimeDiscretizationConstraint::FillJacobianBlock(std::string var_set,
+void TimeDiscretizationConstraint::FillJacobianBlock(const std::string& var_set,
                                                      Jacobian& jac) const
 {
   int k = 0;

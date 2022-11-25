@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 namespace towr {
 
 TerrainConstraint::TerrainConstraint(const HeightMap::Ptr& terrain,
-                                     std::string ee_motion)
+                                     const std::string& ee_motion)
     : ConstraintSet(kSpecifyLater, "terrain-" + ee_motion)
 {
   ee_motion_id_ = ee_motion;
@@ -82,7 +82,7 @@ TerrainConstraint::VecBound TerrainConstraint::GetBounds() const
   return bounds;
 }
 
-void TerrainConstraint::FillJacobianBlock(std::string var_set,
+void TerrainConstraint::FillJacobianBlock(const std::string& var_set,
                                           Jacobian& jac) const
 {
   if (var_set == ee_motion_->GetName()) {

@@ -59,19 +59,19 @@ class TimeDiscretizationConstraint : public ifopt::ConstraintSet {
    * @param constraint_name  The name of the constraint.
    */
   TimeDiscretizationConstraint(double T, double dt,
-                               std::string constraint_name);
+                               const std::string& constraint_name);
 
   /**
    * @brief construct a constraint for ifopt.
    * @param dts  Time instances at which to evaluate the constraints.
    * @param name The name of the constraint.
    */
-  TimeDiscretizationConstraint(const VecTimes& dts, std::string name);
+  TimeDiscretizationConstraint(const VecTimes& dts, const std::string& name);
   virtual ~TimeDiscretizationConstraint() = default;
 
   Eigen::VectorXd GetValues() const override;
   VecBound GetBounds() const override;
-  void FillJacobianBlock(std::string var_set, Jacobian&) const override;
+  void FillJacobianBlock(const std::string& var_set, Jacobian&) const override;
 
  protected:
   int GetNumberOfNodes() const;

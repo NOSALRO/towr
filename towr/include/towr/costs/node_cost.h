@@ -67,7 +67,7 @@ class NodeCost : public ifopt::CostTerm {
   int dim_;
   double weight_;
 
-  void FillJacobianBlock(std::string var_set, Jacobian&) const override;
+  void FillJacobianBlock(const std::string& var_set, Jacobian&) const override;
 };
 
 } /* namespace towr */

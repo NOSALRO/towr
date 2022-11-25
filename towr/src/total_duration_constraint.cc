@@ -62,7 +62,7 @@ TotalDurationConstraint::VecBound TotalDurationConstraint::GetBounds() const
                   ifopt::Bounds(0.1, T_total_ - min_duration_last_phase));
 }
 
-void TotalDurationConstraint::FillJacobianBlock(std::string var_set,
+void TotalDurationConstraint::FillJacobianBlock(const std::string& var_set,
                                                 Jacobian& jac) const
 {
   if (var_set == phase_durations_->GetName())

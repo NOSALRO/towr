@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 namespace towr {
 
-SwingConstraint::SwingConstraint(std::string ee_motion)
+SwingConstraint::SwingConstraint(const std::string& ee_motion)
     : ConstraintSet(kSpecifyLater, "swing-" + ee_motion)
 {
   ee_motion_id_ = ee_motion;
@@ -83,7 +83,7 @@ SwingConstraint::VecBound SwingConstraint::GetBounds() const
   return VecBound(GetRows(), ifopt::BoundZero);
 }
 
-void SwingConstraint::FillJacobianBlock(std::string var_set,
+void SwingConstraint::FillJacobianBlock(const std::string& var_set,
                                         Jacobian& jac) const
 {
   if (var_set == ee_motion_->GetName()) {

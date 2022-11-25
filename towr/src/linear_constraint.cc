@@ -59,7 +59,7 @@ LinearEqualityConstraint::VecBound LinearEqualityConstraint::GetBounds() const
   return bounds;
 }
 
-void LinearEqualityConstraint::FillJacobianBlock(std::string var_set,
+void LinearEqualityConstraint::FillJacobianBlock(const std::string& var_set,
                                                  Jacobian& jac) const
 {
   // the constraints are all linear w.r.t. the decision variables.

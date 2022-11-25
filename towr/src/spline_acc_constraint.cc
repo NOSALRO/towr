@@ -32,7 +32,7 @@ OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 namespace towr {
 
 SplineAccConstraint::SplineAccConstraint(const NodeSpline::Ptr& spline,
-                                         std::string node_variable_name)
+                                         const std::string& node_variable_name)
     : ConstraintSet(kSpecifyLater, "splineacc-" + node_variable_name)
 {
   spline_            = spline;
@@ -62,7 +62,7 @@ Eigen::VectorXd SplineAccConstraint::GetValues() const
   return g;
 }
 
-void SplineAccConstraint::FillJacobianBlock(std::string var_set,
+void SplineAccConstraint::FillJacobianBlock(const std::string& var_set,
                                             Jacobian& jac) const
 {
   if (var_set == node_variables_id_) {

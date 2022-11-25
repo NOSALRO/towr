@@ -57,14 +57,14 @@ class TerrainConstraint : public ifopt::ConstraintSet {
    * @param terrain  The terrain height value and slope for each position x,y.
    * @param ee_motion_id The name of the endeffector variable set.
    */
-  TerrainConstraint(const HeightMap::Ptr& terrain, std::string ee_motion_id);
+  TerrainConstraint(const HeightMap::Ptr& terrain, const std::string& ee_motion_id);
   virtual ~TerrainConstraint() = default;
 
   void InitVariableDependedQuantities(const VariablesPtr& x) override;
 
   VectorXd GetValues() const override;
   VecBound GetBounds() const override;
-  void FillJacobianBlock(std::string var_set, Jacobian&) const override;
+  void FillJacobianBlock(const std::string& var_set, Jacobian&) const override;
 
  private:
   NodesVariablesPhaseBased::Ptr

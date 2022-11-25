@@ -56,7 +56,7 @@ class LinearEqualityConstraint : public ifopt::ConstraintSet {
 
   VectorXd GetValues() const final;
   VecBound GetBounds() const final;
-  void FillJacobianBlock(std::string var_set, Jacobian&) const final;
+  void FillJacobianBlock(const std::string& var_set, Jacobian&) const final;
 
  private:
   MatrixXd M_;

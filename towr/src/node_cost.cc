@@ -60,7 +60,7 @@ double NodeCost::GetCost() const
   return cost;
 }
 
-void NodeCost::FillJacobianBlock(std::string var_set, Jacobian& jac) const
+void NodeCost::FillJacobianBlock(const std::string& var_set, Jacobian& jac) const
 {
   if (var_set == node_id_) {
     for (int i = 0; i < nodes_->GetRows(); ++i)

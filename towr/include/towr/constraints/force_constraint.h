@@ -71,7 +71,7 @@ class ForceConstraint : public ifopt::ConstraintSet {
 
   VectorXd GetValues() const override;
   VecBound GetBounds() const override;
-  void FillJacobianBlock(std::string var_set, Jacobian&) const override;
+  void FillJacobianBlock(const std::string& var_set, Jacobian&) const override;
 
  private:
   NodesVariablesPhaseBased::Ptr ee_force_;   ///< the current xyz foot forces.

@@ -105,7 +105,7 @@ ForceConstraint::VecBound ForceConstraint::GetBounds() const
   return bounds;
 }
 
-void ForceConstraint::FillJacobianBlock(std::string var_set,
+void ForceConstraint::FillJacobianBlock(const std::string& var_set,
                                         Jacobian& jac) const
 {
   if (var_set == ee_force_->GetName()) {
